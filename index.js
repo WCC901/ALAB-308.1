@@ -1,7 +1,7 @@
 // The initial numbers that must be verified.
 const n1 = 10;
 const n2 = 15;
-const n3 = 20;
+const n3 = 21;
 const n4 = 5;
 
 // Check one: add up to 50
@@ -32,8 +32,13 @@ const isUnique = n1 != n2 && n1 != n3 && n1 != n4 && n2 != n3 && n2 != n4 && n3 
 // "isUnder25" as an alternative.
 const isValid = isSum50 && isTwoOdd && !isOver25 && isUnique;
 
+// Check five: all numbers divisible by 5
+// Similar logic to the isTwoOdd variable 
+// but checks for no matches instead of 2 or less
+const isDivBy5 = (n1 % 5) + (n2 % 5) + (n3 % 5) + (n4 % 5) == 0;
+
 // Finally, log the results.
-console.log(isValid);
+console.log(isDivBy5);
 
 // Here's another example of how this COULD be done,
 // but it SHOULD NOT be done this way. As programmers,
